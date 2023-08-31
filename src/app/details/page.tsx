@@ -69,7 +69,6 @@ const Details = () => {
   const handleNextImage = (increment: number) => {
     const nextIndex = currentImageIndex + increment;
 
-    console.log(nextIndex);
     if (nextIndex >= 0 && nextIndex <= 3) {
       setCurrentImageIndex(nextIndex);
       setImgBanner(carrousel[nextIndex]);
