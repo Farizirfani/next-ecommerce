@@ -8,6 +8,7 @@ import iconCart from "../../public/img/images/icon-cart.svg";
 import iconMenu from "@/public/img/images/icon-menu.svg";
 import iconClose from "@/public/img/images/icon-close.svg";
 import iconDelete from "@/public/img/images/icon-delete.svg";
+import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 const Navbar = () => {
@@ -40,15 +41,33 @@ const Navbar = () => {
             >
               <Image src={iconMenu} alt="icon menu" />
             </div>
-            <h1 className="text-3xl font-bold">sneakers</h1>
+            <Link href="/" className="text-3xl font-bold">
+              sneakers
+            </Link>
             <div className="gap-5 h-full items-center hidden lg:flex w-full">
-              <h1 className="flex items-center h-full border-b-orange-500 border-b-4 ">
-                Collections
-              </h1>
-              <h1 className="text-slate-500">Men</h1>
-              <h1 className="text-slate-500">Woman</h1>
-              <h1 className="text-slate-500">About</h1>
-              <h1 className="text-slate-500">Contact</h1>
+              <Link
+                href="/details"
+                className={`text-black ${
+                  location.pathname === "/details"
+                    ? ""
+                    : "flex items-center h-full border-b-orange-500 border-b-4"
+                }`}
+              >
+                details
+              </Link>
+              <Link
+                href="/collection"
+                className={`text-black ${
+                  location.pathname === "/collection"
+                    ? ""
+                    : "flex items-center h-full border-b-orange-500 border-b-4"
+                }`}
+              >
+                collection
+              </Link>
+              <div className="text-slate-500">Man</div>
+              <div className="text-slate-500">About</div>
+              <div className="text-slate-500">Contact</div>
             </div>
           </div>
           <div className="flex gap-4 lg:gap-10 items-center">
@@ -104,6 +123,14 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
+          {cartProduct?.length > 0 && (
+            <div className="w-full flex justify-end p-2">
+              <button className="bg-orange-500 text-white w-full px-4 py-2 rounded-md">
+                Check Out
+              </button>
+            </div>
+          )}
         </div>
       </div>
       {navMobile === true && (
