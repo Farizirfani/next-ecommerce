@@ -49,8 +49,8 @@ const Navbar = () => {
                 href="/details"
                 className={`text-black ${
                   location.pathname === "/details"
-                    ? ""
-                    : "flex items-center h-full border-b-orange-500 border-b-4"
+                    ? "flex items-center h-full border-b-orange-500 border-b-4"
+                    : ""
                 }`}
               >
                 details
@@ -59,8 +59,8 @@ const Navbar = () => {
                 href="/collection"
                 className={`text-black ${
                   location.pathname === "/collection"
-                    ? ""
-                    : "flex items-center h-full border-b-orange-500 border-b-4"
+                    ? "flex items-center h-full border-b-orange-500 border-b-4"
+                    : ""
                 }`}
               >
                 collection
